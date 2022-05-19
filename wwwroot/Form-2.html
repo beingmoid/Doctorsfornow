@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<title>CourseForDoctors.com</title>
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">  
+<style>
+.form-horizontal{
+    box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+    width: 94%;
+    padding: 40px 40px 0;
+    margin: 46px 0;
+    /* box-shadow: 2px 2px 10px #808080,25px -25px 0 5px rgba(0,0,0,0.15); */
+    position: relative;
+    height: 100%;
+}
+/* .form-horizontal:before{
+    content: 'SIGN IN';
+    color: #8F94FB;
+    font-size: 18px;
+    transform: translateY(-50%) rotate(90deg);
+    position: absolute;
+    top: 50%;
+    right: -48px;
+} */
+.form-horizontal .heading{
+    /* color: #8F94FB; */
+    padding-bottom: 38px;
+    color: black;
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 0 0 20px 0;
+}
+.form-horizontal .form-group{
+    margin-left: 26px;
+    display: inline-block;
+    margin: 0 auto 20px;
+    position: relative;
+}
+.form-horizontal .form-group:nth-child(3){ margin: 0 auto 10px; }
+.form-horizontal .form-group>i{
+    color: #999;
+    font-size: 20px;
+    /* position: absolute; */
+    left: 5px;
+    top: 13px;
+}
+.form-horizontal .form-control{
+    /* margin-left: 49px; */
+    color: #808080;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    height: 45px;
+    /* padding: 10px 8px 10px 30px; */
+    box-shadow: none;
+    border: 0 solid rgba(0,0,0,0.2);
+    border-bottom: 2px solid rgba(0,0,0,0.2);
+    border-radius: 0;
+    display: block;
+}
+.form-control::placeholder{
+    color: rgba(0,0,0,0.2);
+    font-size: 15px;
+}
+.form-horizontal .form-control:focus{
+    color: #8F94FB;
+    box-shadow: none;
+    border-bottom-color: #8F94FB;
+}
+.form-horizontal .forgot-password{
+    color: #808080;
+    font-size: 13px;
+    letter-spacing: 1px;    
+    display: inline-block;
+    float: right;
+}
+.form-horizontal .forgot-password:hover{ color: #8F94FB; }
+.form-horizontal .keep-signed{
+    color: #808080;
+    font-weight: 600;
+    font-size: 13px;
+    margin: 0 0 20px 0;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+.form-horizontal .keep-signed i{
+    color: transparent;
+    padding: 3px;
+    margin-right: 5px;
+    border: 1px solid #808080;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+.form-horizontal .keep-signed:hover,
+.form-horizontal .keep-signed:focus{
+    color: #8F94FB;
+}
+.form-horizontal .keep-signed:hover i,
+.form-horizontal .keep-signed:focus i{
+    color: #fff;
+    background-color: #8F94FB;
+    border-color: #8F94FB;
+}
+.form-horizontal .btn{
+    padding: 17px;
+    border-radius: 25px;
+    width: 100%;
+    margin-top: 69px;
+    color: #fff;
+    background: #236DFA;    
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    /* margin: 0 auto 20px; */
+    border: none;
+    display: block;
+    transition: all 0.3s ease;
+}
+.form-horizontal .btn:focus,
+.form-horizontal .btn:hover{
+    background-color: #8F94FB;
+    text-shadow: 0 0 5px #555;
+    box-shadow: -3px -1px 5px rgba(0,0,0,0.3);
+}
+.form-horizontal .form-footer{
+    background-color: #8F94FB;
+    text-align: center;
+    padding: 10px 0;
+    margin: 0 -40px;
+}
+.form-horizontal .form-footer span{
+    color: #fff;
+    font-weight: 600;
+    margin: 0 15px 0 0;
+    display: inline-block;
+}
+.form-horizontal .social{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: inline-block;
+}
+.form-horizontal .social li{
+    display: inline-block;
+    margin: 0 5px;
+}
+.form-horizontal .social li a{
+    color: #8F94FB;
+    background-color: #fff;
+    font-size: 16px;
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    transition: all 0.5s;
+}
+.form-horizontal .social li a:hover{
+    border-radius: 50%;
+    text-decoration: none;
+}
+.form-horizontal .social li:nth-child(1) a:hover{
+    color: #fff;
+    background-color: #3f51b5;
+}
+.form-horizontal .social li:nth-child(2) a:hover{
+    color: #fff;
+    background-color: #36c5ff;
+}
+.fa-user:before{
+    display: none;
+}
+.fa-lock:before{
+    display: none;
+}
+.Register-btn{
+    width: 100%;
+}
+#Register-As{
+  margin-left: 28px;
+}
+#Country-1{
+  margin-left: 28px;    
+  width: 94%;
+}
+#dropdown-options{
+    float: right;
+    border: none;
+    /* border-bottom: 2px solid rgba(0,0,0,0.2); */
+    margin-left: 29px;
+    position: relative;
+    top: 12px;
+}
+#dropdown-options-2{
+    float: right;
+    border: none;
+    /* border-bottom: 2px solid rgba(0,0,0,0.2); */
+    margin-left: 29px;
+    position: relative;
+    top: 25px;
+}
+select{
+  color: #A6A6A6;
+}
+.box{
+    background-color: #A6A6A6;
+    width: 93%; 
+    height: 2px;
+    margin-left: 28px;
+    position: relative;
+    top: 45px;
+}
+.box-1{
+    background: #A6A6A6;
+    width: 92%;
+    height: 2px;
+    margin-left: 29px;
+    position: relative;
+    top: 55px;
+}
+.form-horizontal .form-group:nth-child(2){
+
+}
+/* #placeholder-1{
+    color: #A6A6A6;
+} */
+@media only screen and (max-width:576px){   
+    .form-horizontal{
+        text-align: center;
+        width: 100%;
+        padding: 20px 20px 0;
+        margin: 0;
+        box-shadow: 2px 2px 10px #808080;
+    }
+    .form-horizontal:before{ display: none; }
+    .form-horizontal .form-footer{ margin: 0 -20px; }
+    .form-horizontal .form-footer span{
+        display: block;
+        margin: 0 0 5px;
+    }
+    .form-horizontal .form-footer .social{ display: block; }
+}
+</style>
+</head>
+<body>
+<div class="form-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-offset-3 col-md-6">
+                <form class="form-horizontal">
+                    <div class="heading">Registration</div>
+                    <div class="form-group">
+                        <i class="fa fa-user"></i><input class="form-control" type="Name" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <select name="" id="dropdown-options" class="">
+                            <option value="" id="placeholder-1">Register As</option>
+                            <option value="">11111111111111111111111111111</option>
+                            <option value="">11111111111111111111111111111</option>
+                            <option value="">11111111111111111111111111111</option>
+                            <option value="">11111111111111111111111111111</option>
+                            <option value="">11111111111111111111111111111</option>
+                        </select>
+                        <div class="box"></div>
+                        <!-- <i class="fa fa-lock"></i><input class="form-control" id="Register-As" type="" placeholder="Register As">                       -->
+                        <!-- <a href="" class="forgot-password">Forgot password?</a> -->
+                    </div>
+                    <div class="form-group">
+                        <i class="fa fa-user"></i><input class="form-control" type="Name" placeholder="Address ">
+                    </div>
+                    <div class="form-group">
+                        <select name="" id="dropdown-options-2">
+                            <option value="">Country</option>
+                            <option value="">11111111111111111111111111111</option>
+                            <option value="">11111111111111111111111111111</option>
+                            <option value="">11111111111111111111111111111</option>
+                            <option value="">11111111111111111111111111111</option>
+                            <option value="">11111111111111111111111111111</option>
+                        </select>
+                        <div class="box-1"></div>
+                        <!-- <i class="fa fa-lock"></i><input class="form-control" id="Country-1" type="" placeholder="Country "> -->
+                        <!-- <a href="" class="forgot-password">Forgot password?</a> -->
+                    </div>
+                    <div class="form-group">
+                        <i class="fa fa-user"></i><input class="form-control"  type="Name" placeholder="Phone Number">
+                    </div>  
+                    <div class="form-group">
+                        <i class="fa fa-lock"></i><input class="form-control" id="Country-1" type="" placeholder="Type Of Business">
+                        <!-- <a href="" class="forgot-password">Forgot password?</a> -->
+                    </div>
+                    <div class="form-group">
+                        <i class="fa fa-lock"></i><input class="form-control"  type="password" placeholder="Organization/Company ">
+                        <!-- <a href="" class="forgot-password">Forgot password?</a> -->
+                    </div>
+                    <!-- <a href="" class="keep-signed"><i class="fa fa-check"></i>Keep me Signed in?</a> --> 
+                    <button type="button" class="btn btn-primary Register-btn">Register</button>
+  
+                    <!-- <button type="submit" class="btn btn-default">Login</button> -->
+                    <!-- <div class="form-footer">
+                        <span>Connect With</span>
+                        <ul class="social">
+                            <li><a class="my-facebook fab fa-facebook-f" href=""></a></li>
+                            <li><a class="my-twitter fab fa-twitter" href=""></a></li>
+                        </ul>
+                    </div> -->
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script>
+    $(".js-example-placeholder-single").select2({
+    placeholder: "Select a state",
+    allowClear: true
+});
+</script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>

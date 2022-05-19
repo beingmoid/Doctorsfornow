@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+<title>CourseForDoctors.com</title>
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">  
+<style>
+    .form-horizontal{
+    box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    padding: 40px 40px 0;
+    margin: 30px 0;
+    height: 100%;
+    /* box-shadow: 2px 2px 10px #808080,25px -25px 0 5px rgba(0,0,0,0.15); */
+    position: relative;
+}
+.form-horizontal:before{
+    /* content: 'SIGN IN';
+    color: #8F94FB;
+    font-size: 18px;
+    transform: translateY(-50%) rotate(90deg);
+    position: absolute;
+    top: 50%;
+    right: -48px; */
+}
+.form-horizontal .heading{
+    color: black;   
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 0 0 20px 0;
+    padding-bottom: 62px;
+}
+.form-horizontal .form-group{
+    margin: 0 auto 20px;
+    position: relative;
+}
+.form-horizontal .form-group:nth-child(3){ margin: 0 auto 10px; }
+.form-horizontal .form-group>i{
+    color: #999;
+    font-size: 20px;
+    padding-right: 44px;
+    margin-top: -33px;
+    /* position: absolute; */
+    left: 5px;
+    top: 13px;
+}
+.form-horizontal .form-control{
+    color: #808080;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: 600;
+    height: 45px;
+    /* padding: 10px 8px 10px 30px; */
+    box-shadow: none;
+    border: 0 solid rgba(0,0,0,0.2);
+    border-bottom: 2px solid rgba(0,0,0,0.2);
+    border-radius: 0;
+    display: block;
+}
+.form-control::placeholder{
+    color: rgba(0,0,0,0.2);
+    font-size: 15px;
+}
+.form-horizontal .form-control:focus{
+    color: #8F94FB;
+    box-shadow: none;
+    border-bottom-color: #8F94FB;
+}
+.form-horizontal .forgot-password{
+    color: #236DFA;
+    font-size: 13px;    
+    letter-spacing: 1px;
+    display: inline-block;
+    padding-bottom: 47px;
+    margin-top: 20px;
+    font-family: 'Raleway'; 
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-decoration: none;
+/* identical to box height */
+
+
+color: #236DFA;
+    /* float: right; */
+}
+.form-horizontal .forgot-password:hover{ color: #8F94FB; }
+.form-horizontal .keep-signed{
+    color: #808080;
+    font-weight: 600;
+    font-size: 13px;
+    margin: 0 0 20px 0;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+.form-horizontal .keep-signed i{
+    color: transparent;
+    padding: 3px;
+    margin-right: 5px;
+    border: 1px solid #808080;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+.form-horizontal .keep-signed:hover,
+.form-horizontal .keep-signed:focus{
+    color: #8F94FB;
+}
+.form-horizontal .keep-signed:hover i,
+.form-horizontal .keep-signed:focus i{
+    color: #fff;
+    background-color: #8F94FB;
+    border-color: #8F94FB;
+}
+.form-horizontal .btn{
+    padding: 17px;
+    background: #236DFA;
+    color: white;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    width: 100%;
+    /* padding: 10px; */
+    margin: 0 auto 20px;
+    border: none;
+    display: block;
+    transition: all 0.3s ease;
+}
+.form-horizontal .btn:focus,
+.form-horizontal .btn:hover{
+    background-color: #8F94FB;
+    text-shadow: 0 0 5px #555;
+    box-shadow: -3px -1px 5px rgba(0,0,0,0.3);
+}
+.form-horizontal .form-footer{
+    background-color: #8F94FB;
+    text-align: center;
+    padding: 10px 0;
+    margin: 0 -40px;
+}
+.form-horizontal .form-footer span{
+    color: #fff;
+    font-weight: 600;
+    margin: 0 15px 0 0;
+    display: inline-block;
+}
+.form-horizontal .social{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: inline-block;
+}
+.form-horizontal .social li{
+    display: inline-block;
+    margin: 0 5px;
+}
+.form-horizontal .social li a{
+    color: #8F94FB;
+    background-color: #fff;
+    font-size: 16px;
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    transition: all 0.5s;
+}
+.form-horizontal .social li a:hover{
+    border-radius: 50%;
+    text-decoration: none;
+}
+.form-horizontal .social li:nth-child(1) a:hover{
+    color: #fff;
+    background-color: #3f51b5;
+}
+.form-horizontal .social li:nth-child(2) a:hover{
+    color: #fff;
+    background-color: #36c5ff;
+}
+span a{
+    margin-left: 14px;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #B0D8DA;
+}
+.an-account .anchor-tag-1{
+    text-align: center;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;    
+    line-height: 19px;
+    /* identical to box height */
+    color: #A6A6A6;
+}
+a{
+    text-decoration: none;
+}
+i.bi{
+    float: right;
+}
+#an-account-div{
+    text-align: center;
+}
+
+@media only screen and (max-width:576px){
+    .form-horizontal{
+        text-align: center;
+        width: 100%;
+        padding: 20px 20px 0;
+        margin: 0;
+        box-shadow: 2px 2px 10px #808080;
+    }
+    .form-horizontal:before{ display: none; }
+    .form-horizontal .form-footer{ margin: 0 -20px; }
+    .form-horizontal .form-footer span{
+        display: block;
+        margin: 0 0 5px;
+    }
+    .form-horizontal .form-footer .social{ display: block; }
+}
+</style>
+</head>
+<body>
+    <div class="form-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <form class="form-horizontal">
+                        <div class="heading">Log In</div>
+                        <div class="form-group">
+                            <input class="form-control" type="Name" placeholder="Email Address">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="password" placeholder="password"><i class="bi bi-eye-slash-fill"></i>
+                            <a href="" class="forgot-password">Forgot Password</a>  
+                        </div>
+                        <!-- <a href="" class="keep-signed"><i class="fa fa-check"></i>Keep me Signed in?</a> -->
+                        <button type="submit" class="btn btn-default">Login</button>
+                        <!-- <div class="form-footer">
+                            <span>Connect With</span>
+                            <ul class="social">
+                                <li><a class="my-facebook fab fa-facebook-f" href=""></a></li>
+                                <li><a class="my-twitter fab fa-twitter" href=""></a></li>
+                            </ul>
+                        </div> -->
+                        <div id="an-account-div">
+                        <p class="an-account"><a href="" class="anchor-tag-1" >Don’t have an account?</a><span><a href="">Register</a></span> </p>
+                    </div>
+                    </form>
+                </div>
+                <div class="col-md-3"></div>
+
+            </div>
+        </div>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>
